@@ -1,0 +1,71 @@
+<div class="container">
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="end">
+      <mat-tab label="Funcion 1">
+       
+        <h3> Búsqueda de empleados que trabajaron en el año y cine elegidos por usted</h3>
+        
+        <div>
+          <mat-form-field>
+            <mat-label>Nombre del cine</mat-label>
+            <input matInput [(ngModel)]="cine">
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Año</mat-label>
+              <input matInput [(ngModel)]="anno">
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="ejecutarConsulta1()">Consultar datos</button>
+        </div>
+      
+
+        <div class="respuesta">
+          <mat-list >
+            <mat-list-item *ngFor="let index of empleadosR">
+              <mat-icon> person_pin</mat-icon>
+              <span>Nombre: </span>{{index.nombre_empleado}}
+              <span>Edad: </span>{{index.edad}}
+              <span>Sexo: </span>{{index.sexo}}
+              <span>Dirección: </span>{{index.direccion}}
+              <span>Horas de trabajo: </span>{{index.horas_trabajo}}
+              <span>Sala: </span>{{index.id_sala}}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+        </div>
+      </mat-tab>
+
+
+        <mat-tab label="Funcion 2">
+          <h3> Búsqueda de actores que proyectaron peliculas en un mes determinado</h3>
+        
+          <div>
+            <mat-form-field>
+              <mat-label>Nombre del actor</mat-label>
+              <input matInput [(ngModel)]="nombreActor">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mes</mat-label>
+                <input matInput [(ngModel)]="mes">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="ejecutarConsulta2()">Consultar datos</button>
+          </div>
+            
+
+          <div class="respuesta">
+            <mat-list >
+              <mat-list-item *ngFor="let index of peliculas">
+                <mat-icon>movie</mat-icon>
+                <span>Titulo: </span>{{index.titulo_original}}
+                <span>Duracion: </span>{{index.duracion}}
+                <span>Genero: </span>{{index.genero}}
+                <span>Diretor: </span>{{index.director}}
+                <span>Pais: </span>{{index.pais_origen}}
+                <span>Actores: </span>{{index.info_actores}}
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </mat-list>
+          </div>
+
+        </mat-tab>
+      </mat-tab-group>
+</div>

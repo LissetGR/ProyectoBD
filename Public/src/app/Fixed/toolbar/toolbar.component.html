@@ -1,0 +1,11 @@
+<div>
+    <mat-toolbar>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <a routerLink='/actores'><button mat-menu-item> Actores</button> </a>
+          <a routerLink="/consultas"><button mat-menu-item>Consultas</button></a>
+          <a routerLink="/funciones"><button mat-menu-item>Funciones</button></a>
+        </mat-menu>
+    <span> Cines y películas</span>
+  </mat-toolbar>
+<div>

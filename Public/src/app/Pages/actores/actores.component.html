@@ -1,0 +1,92 @@
+<div class="container">
+   <div class="imagen"></div>
+<!--
+    <div class="elegir">
+      <div class="radio-inputs">
+        <label class="radio">
+          <input type="radio" name="radio" checked="">
+          <span class="name">Actores</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="radio">
+          <span class="name">Cines</span>
+        </label>
+
+        <label class="radio">
+          <input type="radio" name="radio">
+          <span class="name">Películas</span>
+        </label>
+      </div>
+    </div> -->
+
+    <div class="titulo">
+        <h1 class="tittle" [ngClass]="{'moverse':visible}">Actores registrados</h1>
+        <div class="example-button-container">
+            <button mat-fab color="primary" aria-label="Example icon button with a home icon"  (click)="Add( )" >
+              <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="formulario" [ngClass]="{'visible':!visible}">
+        <h3>Introduzca los datos</h3>
+        <div class="datos">
+            <table class="example-full-width" cellspacing="0" ><tr>
+                <td ><mat-form-field class="example-full-width" >
+                  <mat-label >Nombre</mat-label>
+                  <input matInput [(ngModel)]="aux.nombre_actor">
+                </mat-form-field></td>
+              </tr></table>
+              <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label >ID</mat-label>
+                  <input matInput [disabled]="id_unavailable" [(ngModel)]="aux.id_actor">
+                </mat-form-field></td>
+              </tr></table>
+              <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label>Edad</mat-label>
+                  <input matInput [(ngModel)]="aux.edad" placeholder=" ">
+                </mat-form-field></td>
+              </tr></table>
+              <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label>Nacionalidad</mat-label>
+                  <input matInput [(ngModel)]="aux.nacionalidad">
+                </mat-form-field></td>
+              </tr></table>
+            <form action="#">
+                <input type="radio" name="genero" value="M"  [(ngModel)]="aux.genero_actor">Masculino
+                <input type="radio"  name="genero" value="F" [(ngModel)]="aux.genero_actor">Femenino
+            </form>
+        </div>
+        <div class="botones">
+            <button mat-raised-button (click)="ventanaVisible()">Cancelar</button>
+            <button mat-raised-button color="primary" (click)="agregarActor()">Aceptar</button>
+        </div>
+
+    </div>
+
+
+    <div class="actor" [ngClass]="{'moverse':visible}">
+        <div class="info"  *ngFor="let item of actores">
+          <div class="names">
+              <div >
+                <mat-icon> person_outline </mat-icon>
+              </div>
+              <h1>{{item.nombre_actor}}</h1>
+          </div>
+          <div>
+                <h3>{{item.edad}} años</h3>
+                <h4>{{item.nacionalidad}}</h4>
+            </div>
+            <div class="icon">
+                <mat-icon (click)="borrarActor(item.id_actor)"> delete_outline </mat-icon>
+                <mat-icon  (click)="editarInfoActor(item)"> create </mat-icon>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

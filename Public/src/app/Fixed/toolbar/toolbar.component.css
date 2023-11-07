@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  a{
+    text-decoration: none;
+}
+
+
+mat-icon{
+    margin-left: auto;
+}
+
+.nombre{
+  height: 3rem;
+}
+
+span{
+  font-size: 30px;
+  opacity: 1;
+}

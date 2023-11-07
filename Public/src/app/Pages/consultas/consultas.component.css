@@ -1,0 +1,52 @@
+*{
+    user-select: none;
+}
+
+.container h1{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+span{
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-left: 3rem;
+}
+.DIv{
+    display: flex;
+}
+.titulo{
+font-size: 35px;
+color: rgb(12, 15, 107);
+}
+
+mat-icon{
+    font-size: 2.5em;
+    height: 3em;
+    width: 3em;
+}
+
+.img{
+  height: 22rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imgE{
+  background-image: url('../../../assets/empleado.jpg') ;
+}
+
+.imgP{
+  background-image: url('../../../assets/proyector.jpg') ;
+}
+
+.imgD{
+  background-image: url('../../../assets/director.jpg') ;
+}
+
+table {
+  width: 100%;
+}

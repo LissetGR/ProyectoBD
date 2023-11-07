@@ -1,0 +1,24 @@
+.container{
+    text-align: center;
+}
+
+h3{
+    font-size: 20px;
+    margin-top: 3rem;
+}
+mat-form-field{
+    margin-top: 2rem;
+    margin-right: 5rem;
+    margin-bottom: 3rem;
+}
+
+
+button{
+    margin-top: -20px;
+}
+
+
+span{
+    font-weight: bolder;
+    margin-left: 1rem;
+}

@@ -1,0 +1,59 @@
+<div class="container">
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="end">
+        <mat-tab label="Consulta 1">
+          <div class="img imgE"></div>
+            <div class="consulta1">
+                <mat-list>
+                    <div mat-subheader><span class="titulo"> Empleados  </span></div>
+                    <mat-list-item *ngFor="let item of empleados">
+
+                    <mat-icon> person_pin</mat-icon>
+                    <div matListItemTitle> <span> Nombre:</span> {{item.nombre_empleado}}
+                                           <span > Edad:  </span> {{item.edad}}
+                                           <span> Direccion:</span> {{item.direccion}}
+                                           <span> Horas de trabajo: </span>{{item.horas_trabajo}}
+                                           <span> Cine:  </span>{{item.id_cine}}
+                                           <span> Sala: </span> {{item.id_sala}}
+                                           <span> Fecha de contrato: </span> {{item.fecha_contrato| date}}
+                                           <span> Jefe: </span>{{item.id_empleado2}}
+
+                    </div>
+                    </mat-list-item>
+                  </mat-list>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Consulta 2">
+            <div class="consulta2">
+              <div class="img imgP"></div>
+                <mat-list>
+                    <div mat-subheader><span class="titulo"> Proyecciones </span></div>
+                    <mat-list-item *ngFor="let item of proyecciones">
+                    <mat-icon>tv</mat-icon>
+                    <div matListItemTitle> <span> Pelicula: </span> {{item.id_pelicula}}
+                                           <span > Cine: </span> {{item.id_cine}}
+                                           <span> Fecha de inicio: </span> {{item.fecha_inicio |date}}
+                                           <span> Fecha de fin: </span>{{item.fecha_fin | date}}
+                    </div>
+                    </mat-list-item>
+                  </mat-list>
+            </div>
+        </mat-tab>
+        <mat-tab label="Consulta 3">
+                <div class="consulta4">
+                <div class="img imgD"></div>
+                    <mat-list>
+                        <div mat-subheader><span class="titulo"> Directores </span></div>
+                        <mat-list-item *ngFor="let item of directores">
+                        <mat-icon>videocam</mat-icon>
+                        <div matListItemTitle> <span> Nombre: </span> {{item.nombre}}
+                                            <span > Edad: </span> {{item.edad}}
+                                            <span> Nacionalidad </span> {{item.nacionalidad}}
+                        </div>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+        </mat-tab>
+      </mat-tab-group>
+</div>
